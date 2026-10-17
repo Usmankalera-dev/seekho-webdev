@@ -8,6 +8,31 @@ const CHAPTERS=[
 /* ============ HTML TRACK ============ */
 {slug:"html-basics",track:"html",title:"HTML Basics",
 intro:"HTML (HyperText Markup Language) har website di haddi hai. Ohnu samjho.",
+subs:[{t:"Tags ki ne?",body:`<p>HTML <b>tags</b> naal bani hundi hai. Tag angle brackets vich likhida hai: <code>&lt;p&gt;</code> khulda te <code>&lt;/p&gt;</code> band hunda. Vichkar jo likho, oh disda hai.</p>
+<pre><code>&lt;p&gt;Eh ik paragraph hai.&lt;/p&gt;
+&lt;h1&gt;Waddi heading&lt;/h1&gt;
+&lt;h6&gt;Chhoti heading&lt;/h6&gt;</code></pre>
+<ul>
+<li><code>&lt;h1&gt;</code> toh <code>&lt;h6&gt;</code> — headings (h1 sab toh wadda)</li>
+<li>Har khulan wale tag da band karan wala tag hunda (slash naal)</li>
+<li>Kujh tags self-closing ne, je <code>&lt;br&gt;</code> — ohna nu band karan di lorh nahi</li>
+</ul>`},{t:"Page da dhancha (Structure)",body:`<p>Har HTML page da ikko jeya dhancha hunda hai:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Meri Pehli Site&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello Duniya!&lt;/h1&gt;
+    &lt;p&gt;Eh mera pehla paragraph hai.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<ul>
+<li><code>&lt;!DOCTYPE html&gt;</code> — browser nu dasda eh HTML5 hai</li>
+<li><code>&lt;head&gt;</code> — title wagira (nazar nahi aunda)</li>
+<li><code>&lt;body&gt;</code> — jo nazar aunda, sab ethe likhida</li>
+</ul>
+<div class="tip"><b>Yaad rakho:</b> HTML <i>structure</i> dindi hai, <i>design</i> nahi — oh CSS da kam hai!</div>`}],
 body:`
 <h3>HTML ki hai?</h3>
 <p>HTML <b>tags</b> naal bani hundi hai. Tag angle brackets vich likhida hai: <code>&lt;p&gt;</code> khulda, <code>&lt;/p&gt;</code> band hunda.</p>
@@ -37,6 +62,31 @@ quiz:[
 ]},
 {slug:"html-text",track:"html",title:"Text & Formatting",
 intro:"Text nu bold, italic, list wagira kiddan banaiye.",
+subs:[{t:"Text Formatting",body:`<p>Text nu bold, italic ya quote vich kiddan dikhaiye:</p>
+<pre><code>&lt;p&gt;Eh &lt;b&gt;bold&lt;/b&gt; te &lt;i&gt;italic&lt;/i&gt; hai.&lt;/p&gt;
+&lt;p&gt;Eh &lt;strong&gt;important&lt;/strong&gt; te &lt;em&gt;emphasis&lt;/em&gt; hai.&lt;/p&gt;
+&lt;p&gt;Line break ethe&lt;br&gt;ho gaya!&lt;/p&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;Kisi da quote ethe likho.&lt;/blockquote&gt;</code></pre>
+<ul>
+<li><code>&lt;b&gt;</code> / <code>&lt;strong&gt;</code> — bold (strong = meaning vich important)</li>
+<li><code>&lt;i&gt;</code> / <code>&lt;em&gt;</code> — italic</li>
+<li><code>&lt;br&gt;</code> — line break, <code>&lt;hr&gt;</code> — horizontal line</li>
+</ul>`},{t:"Lists",body:`<p>Dowan kisman diyan lists hundiyan ne:</p>
+<pre><code>&lt;ul&gt;
+  &lt;li&gt;Roti&lt;/li&gt;
+  &lt;li&gt;Kapra&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+  &lt;li&gt;Pehla kam&lt;/li&gt;
+  &lt;li&gt;Dooja kam&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+<ul>
+<li><code>&lt;ul&gt;</code> — unordered list (gole nishan •)</li>
+<li><code>&lt;ol&gt;</code> — ordered list (number 1, 2, 3)</li>
+<li><code>&lt;li&gt;</code> — har item layi</li>
+</ul>
+<div class="tip"><b>Yaad rakho:</b> <code>ul</code> = unordered, <code>ol</code> = ordered. Menu aam taur te <code>ul</code> naal banda hai!</div>`}],
 body:`
 <h3>Text formatting tags</h3>
 <pre><code>&lt;p&gt;Eh &lt;b&gt;bold&lt;/b&gt; te &lt;i&gt;italic&lt;/i&gt; hai.&lt;/p&gt;
@@ -69,6 +119,30 @@ quiz:[
 ]},
 {slug:"html-links-media",track:"html",title:"Links, Images & Media",
 intro:"Doojian sites naal joro, tasveeran te video lao.",
+subs:[{t:"Links",body:`<p>Doojian pages ya sites naal joran layi <code>&lt;a&gt;</code> (anchor) tag:</p>
+<pre><code>&lt;a href="https://google.com"&gt;Google kholo&lt;/a&gt;
+&lt;a href="https://google.com" target="_blank"&gt;Nawi tab vich kholo&lt;/a&gt;
+&lt;a href="page2.html"&gt;Dooja page&lt;/a&gt;</code></pre>
+<ul>
+<li><code>href</code> — jana kithe hai (URL ya file da naam)</li>
+<li><code>target="_blank"</code> — link nawi tab vich khulda</li>
+<li>Apni site de pagean layi relative path vartao, je <code>page2.html</code></li>
+</ul>`},{t:"Images",body:`<p>Tasveer laan layi <code>&lt;img&gt;</code> tag — self-closing hai:</p>
+<pre><code>&lt;img src="photo.jpg" alt="Meri photo" width="300"&gt;</code></pre>
+<ul>
+<li><code>src</code> — tasveer da rasta (file ya URL)</li>
+<li><code>alt</code> — je photo na khule te eh text disda (bohat zaroori!)</li>
+<li><code>width</code> — tasveer di chaudai (height apne aap set)</li>
+</ul>
+<div class="tip"><b>Yaad rakho:</b> <code>alt</code> khali na chhaddo — Google te screen readers layi lazmi hai!</div>`},{t:"Video & Audio",body:`<p>Video te audio vi sidha HTML vich chal sakde ne:</p>
+<pre><code>&lt;video src="video.mp4" controls width="400"&gt;&lt;/video&gt;
+&lt;audio src="song.mp3" controls&gt;&lt;/audio&gt;</code></pre>
+<ul>
+<li><code>controls</code> — play/pause button dikhanda</li>
+<li><code>width</code> — video da size</li>
+<li>MP4 video te MP3 audio sab toh safe formats ne</li>
+</ul>
+<div class="tip"><b>Yaad rakho:</b> <code>controls</code> toh baghair video chal nahi sakdi — play button layi controls zaroori!</div>`}],
 body:`
 <h3>Links</h3>
 <pre><code>&lt;a href="https://google.com"&gt;Google kholo&lt;/a&gt;
@@ -92,6 +166,34 @@ quiz:[
 ]},
 {slug:"html-tables",track:"html",title:"Tables",
 intro:"Data nu safai naal table vich dikhao.",
+subs:[{t:"Table de hisse",body:`<p>Table 4 tags naal bandi hai — har ik da apna kam:</p>
+<pre><code>&lt;table&gt;  &lt;!-- poori table --&gt;
+  &lt;tr&gt;     &lt;!-- table row (ik line) --&gt;
+    &lt;th&gt;Naam&lt;/th&gt;  &lt;!-- heading cell (bold) --&gt;
+    &lt;td&gt;Usman&lt;/td&gt;  &lt;!-- normal data cell --&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+<ul>
+<li><code>&lt;table&gt;</code> — poori table da dabba</li>
+<li><code>&lt;tr&gt;</code> — ik row (line)</li>
+<li><code>&lt;th&gt;</code> — heading cell (bold, center)</li>
+<li><code>&lt;td&gt;</code> — normal data cell</li>
+</ul>`},{t:"Ik poori table",body:`<p>2 column wali poori table di misaal:</p>
+<pre><code>&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Naam&lt;/th&gt;
+    &lt;th&gt;Umar&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Usman&lt;/td&gt;
+    &lt;td&gt;22&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Ahmed&lt;/td&gt;
+    &lt;td&gt;25&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+<div class="tip"><b>Yaad rakho:</b> Pehlan <code>tr</code> (row) banao, phir ohde vich <code>td</code> cells pao. <code>border="1"</code> naal linean disdiyan ne (asli design CSS naal kariye).</div>`}],
 body:`
 <pre><code>&lt;table border="1"&gt;
   &lt;tr&gt;
@@ -119,6 +221,36 @@ quiz:[
 ]},
 {slug:"html-forms",track:"html",title:"Forms & Semantic HTML",
 intro:"User toh input lo — te code nu meaningful banao.",
+subs:[{t:"Forms & Inputs",body:`<p>User toh data lain layi form — naam, password, chunao sab:</p>
+<pre><code>&lt;form&gt;
+  &lt;label&gt;Naam: &lt;/label&gt;
+  &lt;input type="text" placeholder="Apna naam likho"&gt;&lt;br&gt;&lt;br&gt;
+  &lt;label&gt;Password: &lt;/label&gt;
+  &lt;input type="password"&gt;&lt;br&gt;&lt;br&gt;
+  &lt;input type="checkbox"&gt; Yaad rakho&lt;br&gt;&lt;br&gt;
+  &lt;button type="submit"&gt;Bhejo&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+<ul>
+<li><code>type="text"</code> — normal likhan layi</li>
+<li><code>type="password"</code> — lukeya hoya (••••)</li>
+<li><code>type="checkbox"</code> / <code>type="radio"</code> — chunao layi</li>
+<li><code>&lt;label&gt;</code> — input nu naam dinda (click vi kam karda)</li>
+<li><code>&lt;button type="submit"&gt;</code> — form bhejda</li>
+</ul>`},{t:"Semantic HTML",body:`<p><code>&lt;div&gt;</code> di jagah <b>meaningful</b> tags vartao — Google te screen readers samajhde ne:</p>
+<pre><code>&lt;header&gt;Logo te nav&lt;/header&gt;
+&lt;nav&gt;Menu links&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section&gt;Ik hissa&lt;/section&gt;
+  &lt;section&gt;Dooja hissa&lt;/section&gt;
+&lt;/main&gt;
+&lt;footer&gt;Copyright&lt;/footer&gt;</code></pre>
+<ul>
+<li><code>&lt;header&gt;</code> — utte wala hissa</li>
+<li><code>&lt;nav&gt;</code> — navigation links</li>
+<li><code>&lt;main&gt;</code> / <code>&lt;section&gt;</code> — main content</li>
+<li><code>&lt;footer&gt;</code> — thalle wala hissa</li>
+</ul>
+<div class="tip"><b>Yaad rakho:</b> Semantic tags Google (SEO) te screen readers layi bohat zaroori ne!</div>`}],
 body:`
 <h3>Forms</h3>
 <pre><code>&lt;form&gt;
@@ -153,6 +285,33 @@ quiz:[
 /* ============ CSS TRACK ============ */
 {slug:"css-basics",track:"css",title:"CSS Basics",
 intro:"CSS naal website sohni banandi hai — rang, size, style.",
+subs:[{t:"CSS kiddan laiye?",body:`<p>CSS laan de 3 tareeke ne — external sab toh vadhiya:</p>
+<pre><code>&lt;!-- 1. Inline (tag vich sidha) --&gt;
+&lt;p style="color: red;"&gt;Laal text&lt;/p&gt;
+
+&lt;!-- 2. Internal (head vich) --&gt;
+&lt;style&gt;
+  p { color: blue; }
+&lt;/style&gt;
+
+&lt;!-- 3. External (sab toh vadhiya) --&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
+<ul>
+<li><b>Inline</b> — sirf ik tag layi (ganda, na vartao)</li>
+<li><b>Internal</b> — ik page layi</li>
+<li><b>External</b> — poori site layi ik file (professional tareeka)</li>
+</ul>`},{t:"Selectors",body:`<p>CSS kis element te lagna — oh selector dasda:</p>
+<pre><code>/* tag selector — sare p te */
+p { color: green; }
+
+/* class selector (. naal) — kai vaari vart sakde */
+.sohna { font-size: 20px; }
+
+/* id selector (# naal) — sirf ik vaari */
+#khaas { background: yellow; }</code></pre>
+<pre><code>&lt;p class="sohna"&gt;Main sohna hoon&lt;/p&gt;
+&lt;p id="khaas"&gt;Main khaas hoon&lt;/p&gt;</code></pre>
+<div class="tip"><b>Yaad rakho:</b> <code>.</code> = class (kai vaari), <code>#</code> = id (sirf ik vaari). Aam taur te class he vartao!</div>`}],
 body:`
 <h3>CSS kiddan laiye? (3 tareeke)</h3>
 <pre><code>&lt;!-- 1. Inline --&gt;
@@ -186,6 +345,35 @@ quiz:[
 ]},
 {slug:"css-colors-fonts",track:"css",title:"Colors, Fonts & Text",
 intro:"Rang te likhai naal website di jaan.",
+subs:[{t:"Colors",body:`<p>Rang dain de 3 tareeke ne:</p>
+<pre><code>p {
+  color: red;              /* naam naal */
+  color: #ff0000;          /* hex code naal */
+  color: rgb(255, 0, 0);   /* rgb naal */
+  background-color: #0b0f14;  /* pichhe da rang */
+}</code></pre>
+<ul>
+<li><b>Naam</b> — red, blue, green (mehdood rang)</li>
+<li><b>Hex</b> — <code>#f5a524</code> varga (# toh baad 6 harf: 0-9, a-f)</li>
+<li><b>RGB</b> — <code>rgb(255, 0, 0)</code> (laal, hara, neela 0-255)</li>
+</ul>
+<div class="tip"><b>Yaad rakho:</b> Online "color picker" naal hex code chuno — professional design da raaz!</div>`},{t:"Fonts & Text",body:`<p>Likhai nu style karo:</p>
+<pre><code>h1 {
+  font-family: Arial, sans-serif;
+  font-size: 32px;
+  font-weight: bold;      /* ya 700 */
+  text-align: center;
+  text-decoration: underline;
+}
+p {
+  line-height: 1.6;       /* linean vich fasla */
+  letter-spacing: 1px;    /* harfan vich fasla */
+}</code></pre>
+<ul>
+<li><code>font-size</code> — px, em ya rem vich</li>
+<li><code>text-align</code> — left, center, right</li>
+<li><code>line-height</code> — 1.5-1.7 parhan layi best</li>
+</ul>`}],
 body:`
 <h3>Colors (3 tareeke)</h3>
 <pre><code>p {
@@ -216,6 +404,32 @@ quiz:[
 ]},
 {slug:"css-boxmodel",track:"css",title:"Box Model",
 intro:"Har element ik dabba hai — margin, border, padding, content.",
+subs:[{t:"Box Model — 4 hisse",body:`<p>Har HTML element ik <b>dabba</b> hai — bahar toh andar 4 paratan:</p>
+<pre><code>┌────── margin ──────┐
+│ ┌──── border ────┐ │
+│ │ ┌─ padding ──┐ │ │
+│ │ │  content   │ │ │
+│ │ └────────────┘ │ │
+│ └────────────────┘ │
+└────────────────────┘</code></pre>
+<ul>
+<li><b>Content</b> — asal cheez (text, tasveer)</li>
+<li><b>Padding</b> — content te border vichkar fasla (andar)</li>
+<li><b>Border</b> — dabbe da kinara</li>
+<li><b>Margin</b> — border toh bahar fasla (dooje element toh door)</li>
+</ul>`},{t:"Amal vich (Practical)",body:`<p>Box model code vich:</p>
+<pre><code>.dabba {
+  width: 200px;
+  padding: 20px;         /* andar fasla */
+  border: 2px solid red; /* motai, style, rang */
+  margin: 30px;          /* bahar fasla */
+}</code></pre>
+<ul>
+<li><code>border: 2px solid red</code> — motai, style, rang ikko line vich</li>
+<li>Padding dabbe nu <b>andar toh</b> wadda karda</li>
+<li>Margin dabbe nu <b>dooje dabbe toh</b> door karda</li>
+</ul>
+<div class="tip"><b>Yaad rakho:</b> Padding = andar, Margin = bahar. Eh CSS da sab toh zaroori concept hai!</div>`}],
 body:`
 <h3>Box Model (bahar toh andar)</h3>
 <pre><code>┌── margin ──┐
@@ -246,6 +460,37 @@ quiz:[
 ]},
 {slug:"css-flexbox",track:"css",title:"Flexbox",
 intro:"Cheezan nu aasani naal line vich lao — sab toh kam di layout technique.",
+subs:[{t:"Flexbox buniyad",body:`<p>Cheezan nu ik line vich laan da sab toh saukha tareeka:</p>
+<pre><code>&lt;div class="container"&gt;
+  &lt;div class="item"&gt;1&lt;/div&gt;
+  &lt;div class="item"&gt;2&lt;/div&gt;
+  &lt;div class="item"&gt;3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<pre><code>.container {
+  display: flex;   /* bas! iteman ik line vich */
+}
+.item {
+  background: #f5a524;
+  padding: 20px;
+}</code></pre>
+<ul>
+<li><code>display: flex</code> — <b>parent</b> te lagda (container te)</li>
+<li>Iteman apne aap ik line (row) vich aa jande ne</li>
+<li>Navbar, button row, card row — sab flexbox naal</li>
+</ul>`},{t:"Alignment",body:`<p>Flexbox naal cheezan nu jithay marzi tikao:</p>
+<pre><code>.container {
+  display: flex;
+  justify-content: center;  /* khabi-saji */
+  align-items: center;      /* utte-thalle */
+  gap: 10px;               /* iteman vich fasla */
+  height: 200px;
+}</code></pre>
+<ul>
+<li><code>justify-content</code> — main axis: <code>start</code>, <code>center</code>, <code>space-between</code></li>
+<li><code>align-items</code> — cross axis: <code>start</code>, <code>center</code></li>
+<li><code>gap</code> — iteman vichkar fasla</li>
+</ul>
+<div class="tip"><b>Yaad rakho:</b> <code>justify-content: center</code> + <code>align-items: center</code> = cheez bilkul vichkar!</div>`}],
 body:`
 <h3>Flexbox buniyad</h3>
 <pre><code>&lt;div class="container"&gt;
@@ -279,6 +524,33 @@ quiz:[
 ]},
 {slug:"css-grid-responsive",track:"css",title:"Grid & Responsive Design",
 intro:"Grid naal 2D layout, te media queries naal mobile-friendly site.",
+subs:[{t:"CSS Grid",body:`<p>2D layout (row + column) layi Grid:</p>
+<pre><code>&lt;div class="grid"&gt;
+  &lt;div&gt;1&lt;/div&gt;&lt;div&gt;2&lt;/div&gt;&lt;div&gt;3&lt;/div&gt;
+  &lt;div&gt;4&lt;/div&gt;&lt;div&gt;5&lt;/div&gt;&lt;div&gt;6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<pre><code>.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;  /* 3 brabar column */
+  gap: 15px;
+}</code></pre>
+<ul>
+<li><code>1fr</code> = ik hissa (fraction) — 3 columns = 1fr 1fr 1fr</li>
+<li><code>gap</code> — cellan vich fasla</li>
+<li>Photo gallery, card grid — sab Grid naal</li>
+</ul>`},{t:"Responsive Design",body:`<p>Mobile te desktop — ikko site, har screen te sohni:</p>
+<pre><code>/* Desktop: 3 column */
+.grid { grid-template-columns: 1fr 1fr 1fr; }
+
+/* Mobile (700px toh chhota): 1 column */
+@media (max-width: 700px) {
+  .grid { grid-template-columns: 1fr; }
+}</code></pre>
+<ul>
+<li><code>@media (max-width: 700px)</code> — chhoti screen te alag CSS</li>
+<li>Mobile-first socho: pehlan mobile, phir desktop</li>
+</ul>
+<div class="tip"><b>Yaad rakho:</b> Aaj kal 70%+ log mobile te website kholde ne — responsive lazmi hai!</div>`}],
 body:`
 <h3>CSS Grid</h3>
 <pre><code>.grid {
@@ -306,6 +578,28 @@ quiz:[
 /* ============ JAVASCRIPT TRACK ============ */
 {slug:"js-basics",track:"js",title:"JS Basics & Variables",
 intro:"JavaScript website nu zinda kardi hai — button dabao te kuch hove!",
+subs:[{t:"Pehla JS Code",body:`<p>JavaScript website nu <b>zinda</b> kardi hai. Pehla code:</p>
+<pre><code>console.log("Hello Duniya!");
+alert("Main pop-up hoon!");</code></pre>
+<ul>
+<li><code>console.log()</code> — browser console vich likhda</li>
+<li>Console kholan layi <b>F12</b> dabao → Console tab</li>
+<li><code>alert()</code> — pop-up box dikhanda</li>
+</ul>
+<div class="tip"><b>Yaad rakho:</b> <code>console.log</code> tuhada sab toh wadda dost hai — har cheez test karo!</div>`},{t:"Variables",body:`<p>Variables <b>dabbe</b> ne — value rakhde ne:</p>
+<pre><code>let naam = "Usman";   // badal sakda
+const umar = 22;      // fix, nahi badalda
+var purana = "na vartao"; // purana tareeka
+
+let ginti = 5;
+ginti = 10;   // theek (let badal sakda)
+// umar = 23; // GALAT! const nahi badalda</code></pre>
+<ul>
+<li><code>let</code> — badal sakda (aam vartao)</li>
+<li><code>const</code> — fix rehnda (jad ho sake ehi vartao)</li>
+<li><code>var</code> — purana, hun na vartao</li>
+<li>String <code>"..."</code> vich, number beghair quotes: <code>let n = 22</code></li>
+</ul>`}],
 body:`
 <h3>Pehla JS code</h3>
 <pre><code>console.log("Hello Duniya!");
@@ -334,6 +628,42 @@ quiz:[
 ]},
 {slug:"js-conditions",track:"js",title:"Operators & Conditions",
 intro:"Faisle karna sikho — je eh te oh, nahi te kujh hor.",
+subs:[{t:"Operators",body:`<p>Hisab-kitab de nishan:</p>
+<pre><code>let a = 10, b = 3;
+a + b;  // 13 (jod)
+a - b;  // 7  (ghatao)
+a * b;  // 30 (zarb)
+a / b;  // 3.33 (takseem)
+a % b;  // 1  (baki / remainder)</code></pre>
+<ul>
+<li><code>%</code> (modulus) — takseem toh baad <b>baki</b> dinda</li>
+<li>10 % 3 = 1 (kyonki 10 = 3×3 + 1)</li>
+<li>Jor (even) check: <code>n % 2 === 0</code></li>
+</ul>`},{t:"Comparison",body:`<p>Do cheezan di tulna:</p>
+<pre><code>10 === 10;   // true (value + type dono)
+10 == "10";  // true (sirf value) — na vartao!
+10 !== 5;    // true (brabar nahi)
+10 > 5;      // true
+5 &lt;= 5;       // true</code></pre>
+<ul>
+<li><code>===</code> — strict (value + type)</li>
+<li><code>!==</code> — strict not-equal</li>
+<li><code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code> — tulna</li>
+</ul>
+<div class="tip"><b>Yaad rakho:</b> Hamesha <code>===</code> vartao, <code>==</code> nahi — == type nu ignore karda (bug da ghar)!</div>`},{t:"If / Else",body:`<p>Faisle karna — je eh te oh, nahi te kujh hor:</p>
+<pre><code>let umar = 18;
+if (umar >= 18) {
+  console.log("Vote pa sakde ho!");
+} else if (umar >= 13) {
+  console.log("Teenager ho.");
+} else {
+  console.log("Thoda wait karo.");
+}</code></pre>
+<ul>
+<li><code>if</code> — condition true te chalda</li>
+<li><code>else if</code> — hor condition check</li>
+<li><code>else</code> — sab false te chalda</li>
+</ul>`}],
 body:`
 <h3>Operators</h3>
 <pre><code>let a = 10, b = 3;
@@ -364,6 +694,33 @@ quiz:[
 ]},
 {slug:"js-functions",track:"js",title:"Functions",
 intro:"Code nu dabbe vich pao, jad lorh paye chalo.",
+subs:[{t:"Function banao te chalao",body:`<p>Code nu dabbe vich pao — ik vaari likho, sau vaari chalao:</p>
+<pre><code>function salaam(naam) {
+  return "Assalam-o-Alaikum, " + naam + "!";
+}
+
+let msg = salaam("Usman");
+console.log(msg); // Assalam-o-Alaikum, Usman!</code></pre>
+<ul>
+<li><code>naam</code> = <b>parameter</b> (andar aun wala variable)</li>
+<li><code>"Usman"</code> = <b>argument</b> (bhejeya hoya value)</li>
+<li><code>return</code> = value wapis bhejda</li>
+</ul>
+<div class="tip"><b>Yaad rakho:</b> Function ik vaari likho, sau vaari chalao — ehi asli programming hai!</div>`},{t:"Arrow Functions",body:`<p>Nawan chhota tareeka function likhan da:</p>
+<pre><code>// Purana tareeka
+function jod(a, b) {
+  return a + b;
+}
+
+// Arrow function
+const jod2 = (a, b) => a + b;
+
+console.log(jod2(5, 3)); // 8</code></pre>
+<ul>
+<li><code>=&gt;</code> (arrow) function nu chhota karda</li>
+<li>Ik line te <code>return</code> likhan di lorh nahi</li>
+<li>Aaj kal code vich ehi sab toh vadh vartida hai</li>
+</ul>`}],
 body:`
 <h3>Function banao te chalao</h3>
 <pre><code>function salaam(naam) {
@@ -390,6 +747,43 @@ quiz:[
 ]},
 {slug:"js-arrays-objects",track:"js",title:"Arrays & Objects",
 intro:"Kai cheezan ikathe rakho — listan te khaake.",
+subs:[{t:"Arrays",body:`<p>Kai cheezan ik list vich:</p>
+<pre><code>let phal = ["saib", "kela", "angoor"];
+console.log(phal[0]); // "saib" (ginti 0 toh!)
+phal.push("ammood");   // aakhir te pao
+console.log(phal.length); // 4</code></pre>
+<ul>
+<li>Array di ginti <b>0</b> toh shuru hundi!</li>
+<li><code>push()</code> — aakhir te item paonda</li>
+<li><code>length</code> — kinne items ne</li>
+</ul>
+<div class="tip"><b>Yaad rakho:</b> Pehla item = [0], dooja = [1]. Eh galti sab toh vadh hundi hai!</div>`},{t:"Objects",body:`<p>Key-value jorhe — asal duniya wangu:</p>
+<pre><code>let banda = {
+  naam: "Usman",
+  umar: 22,
+  sheher: "Lahore"
+};
+console.log(banda.naam);  // "Usman"
+banda.umar = 23;          // badal sakde
+banda.kam = "Developer";  // nawan pa sakde</code></pre>
+<ul>
+<li><b>Key</b> (naam) → <b>value</b> ("Usman")</li>
+<li><code>banda.naam</code> — dot notation naal access</li>
+<li>Value badal vi sakde, nawan pa vi sakde</li>
+</ul>`},{t:"Loops",body:`<p>Har item te ikko kam — loop naal:</p>
+<pre><code>let phal = ["saib", "kela", "angoor"];
+
+for (let p of phal) {
+  console.log("Mainu pasand: " + p);
+}
+// Mainu pasand: saib
+// Mainu pasand: kela
+// Mainu pasand: angoor</code></pre>
+<ul>
+<li><code>for...of</code> — har item te ik ik karke chalda</li>
+<li><code>p</code> — har vaari agla item</li>
+<li>100 iteman te vi ikko code!</li>
+</ul>`}],
 body:`
 <h3>Array (list)</h3>
 <pre><code>let phal = ["saib", "kela", "angoor"];
@@ -418,6 +812,35 @@ quiz:[
 ]},
 {slug:"js-dom",track:"js",title:"DOM Manipulation",
 intro:"JS naal HTML badlo — website zinda karo!",
+subs:[{t:"Element labho te badlo",body:`<p>JS naal HTML nu hath lao — DOM raahin:</p>
+<pre><code>&lt;p id="msg"&gt;Purana text&lt;/p&gt;
+&lt;button onclick="badlo()"&gt;Badlo&lt;/button&gt;
+
+&lt;script&gt;
+function badlo() {
+  let p = document.getElementById("msg");
+  p.textContent = "Nawan text! 🎉";
+}
+&lt;/script&gt;</code></pre>
+<ul>
+<li><code>document.getElementById("msg")</code> — element labho</li>
+<li><code>.textContent</code> — andar da text badlo</li>
+<li><code>onclick="badlo()"</code> — click te function chalo</li>
+</ul>
+<div class="tip"><b>Yaad rakho:</b> DOM = Document Object Model. JS da HTML naal gall karan da tareeka!</div>`},{t:"Style te HTML badlo",body:`<p>Text toh ilawa rang te poora HTML vi badal sakde:</p>
+<pre><code>let p = document.getElementById("msg");
+p.style.color = "orange";       // rang badlo
+p.style.fontSize = "30px";      // size badlo
+p.style.backgroundColor = "black";
+
+// Poora HTML pa deo:
+p.innerHTML = "&lt;b&gt;Bold&lt;/b&gt; text!";</code></pre>
+<ul>
+<li><code>.style.color</code> — CSS property (camelCase!)</li>
+<li><code>background-color</code> → <code>backgroundColor</code></li>
+<li><code>.innerHTML</code> — HTML hi pa deo</li>
+</ul>
+<div class="tip"><b>Khatra:</b> <code>innerHTML</code> vich user da input na pao — hack (XSS) ho sakda hai!</div>`}],
 body:`
 <h3>Element labho te badlo</h3>
 <pre><code>&lt;p id="msg"&gt;Purana text&lt;/p&gt;
@@ -446,6 +869,34 @@ quiz:[
 ]},
 {slug:"js-events-project",track:"js",title:"Events & Mini Project",
 intro:"Click, type, hover — events te ik poora project!",
+subs:[{t:"Events",body:`<p>Click, type, hover — user di har harkat ik event:</p>
+<pre><code>&lt;button id="btn"&gt;Dabao&lt;/button&gt;
+&lt;script&gt;
+document.getElementById("btn")
+  .addEventListener("click", function() {
+    alert("Button dab gaya!");
+  });
+&lt;/script&gt;</code></pre>
+<ul>
+<li><code>addEventListener("click", ...)</code> — professional tareeka</li>
+<li>Aam events: <code>click</code>, <code>mouseover</code>, <code>keydown</code>, <code>submit</code>, <code>input</code></li>
+<li>Form submit te <code>submit</code> event lagda</li>
+</ul>`},{t:"Mini Project: Counter App",body:`<p>Sikhiya sab ikathe — counter app banao! Playground vich chala ke dekho:</p>
+<pre><code>&lt;h1 id="ginti"&gt;0&lt;/h1&gt;
+&lt;button onclick="wadhao()"&gt;+1&lt;/button&gt;
+&lt;button onclick="ghatao()"&gt;-1&lt;/button&gt;
+&lt;script&gt;
+let n = 0;
+function wadhao() {
+  n++;
+  document.getElementById("ginti").textContent = n;
+}
+function ghatao() {
+  n--;
+  document.getElementById("ginti").textContent = n;
+}
+&lt;/script&gt;</code></pre>
+<div class="tip"><b>Mubarak!</b> 🎉 Tusi counter app bana layi — eh <b>asli</b> JavaScript project hai. Agla challenge: todo list banao!</div>`}],
 body:`
 <h3>Events</h3>
 <pre><code>&lt;button id="btn"&gt;Dabao&lt;/button&gt;

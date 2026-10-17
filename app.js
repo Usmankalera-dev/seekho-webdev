@@ -40,12 +40,16 @@ function renderChapter(){
   const all=CHAPTERS.filter(c=>c.track===ch.track);
   const prev=all[idx-1], next=all[idx+1];
   document.title=ch.title+" — SeekhoWebDev";
+  const subs=(ch.subs&&ch.subs.length?ch.subs:[{t:ch.title,body:ch.body}]);
+  const subsHtml=subs.map((s,i)=>`<div class="lesson subcard"><h2><span class="subnum">${i+1}</span> ${s.t}</h2>${s.body}
+  <div style="margin-top:16px"><a class="btn ghost" href="assets/notes/${ch.slug}-${i+1}.pdf" download>📄 PDF Notes Download</a></div></div>`).join("");
   let html=`<div class="crumb"><a href="index.html">Home</a> › <a href="index.html">${t.name}</a> › ${ch.title}</div>
-  <div class="lesson"><h1>${t.icon} ${ch.title}</h1><p style="color:var(--mut)">${ch.intro}</p>${ch.body}
-  <div style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap">
+  <div class="lesson"><h1>${t.icon} ${ch.title}</h1><p style="color:var(--mut)">${ch.intro}</p>
+  <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
     ${prev?`<a class="btn ghost" href="chapter.html?c=${prev.slug}">← ${prev.title}</a>`:`<a class="btn ghost" href="index.html">← Home</a>`}
     <a class="btn ghost" href="playground.html">▶ Playground vich try karo</a>
   </div></div>
+  ${subsHtml}
   <div class="quiz" id="quiz"><h2>📝 Quiz — ${ch.title}</h2>
   <p style="color:var(--mut)">Submit karo. 60%+ lao te chapter complete!</p><div id="qs"></div>
   <button class="btn" id="submitQuiz">Submit Quiz</button>
