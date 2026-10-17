@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seekho Web Dev — HTML, CSS & JavaScript Course</title>
+<meta name="description" content="Free interactive course: learn HTML, CSS and JavaScript with chapters, quizzes and a live code playground.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="logo" href="index.html">💻 Seekho<span>WebDev</span></a>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="playground.html">Playground</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="kicker">FREE INTERACTIVE COURSE</p>
+    <h1>HTML, CSS & <span class="amber">JavaScript</span> seekho</h1>
+    <p class="sub">Chapters parho, quizzes submit karo, code playground vich practice karo. Tuhadi progress browser vich save hundi hai.</p>
+    <div class="overall">
+      <div class="bar"><div id="overallFill"></div></div>
+      <p id="overallText">0% complete</p>
+    </div>
+  </section>
+
+  <section id="tracks" class="tracks"></section>
+
+  <section class="how">
+    <h2>Kiddan kam karda?</h2>
+    <div class="steps">
+      <div class="step"><b>1</b><p>Chapter parho — simple English + Roman Urdu tips</p></div>
+      <div class="step"><b>2</b><p>Quiz submit karo — 60%+ te chapter complete</p></div>
+      <div class="step"><b>3</b><p>Playground vich code likh ke live result dekho</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Made with 💛 by Usman Kalera · Progress saves in your browser (localStorage)</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>renderHome();</script>
+</body>
+</html>

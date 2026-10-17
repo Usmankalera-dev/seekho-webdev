@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code Playground — SeekhoWebDev</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="logo" href="index.html">💻 Seekho<span>WebDev</span></a>
+  <nav><a href="index.html">Home</a><a href="playground.html" class="active">Playground</a></nav>
+</header>
+<main class="wrap">
+  <div class="pg-head">
+    <h1>⚡ Code Playground</h1>
+    <button class="btn" onclick="run()">▶ Run Code</button>
+  </div>
+  <p style="color:var(--mut)">HTML, CSS, JS likho → Run dabao → live result dekho. Khud experiment karo!</p>
+  <div class="pg">
+    <div class="editors">
+      <label>HTML</label>
+      <textarea id="eH"><h1>Hello Duniya!</h1>
+<p id="msg">Main SeekhoWebDev te sikh reha hoon.</p>
+<button onclick="change()">Click karo</button></textarea>
+      <label>CSS</label>
+      <textarea id="eC">body { font-family: sans-serif; background: #0b0f14; color: #e8edf3; padding: 20px; }
+h1 { color: #f5a524; }
+button { background: #f5a524; border: none; padding: 10px 20px; border-radius: 8px; font-size: 16px; cursor: pointer; }</textarea>
+      <label>JavaScript</label>
+      <textarea id="eJ">function change() {
+  document.getElementById("msg").textContent = "Wah! JavaScript kam kar gaya! 🎉";
+}</textarea>
+    </div>
+    <iframe id="out" title="preview" sandbox="allow-scripts"></iframe>
+  </div>
+</main>
+<footer><p>Made with 💛 by Usman Kalera</p></footer>
+<script>
+function run(){
+  const h=document.getElementById("eH").value, c=document.getElementById("eC").value, j=document.getElementById("eJ").value;
+  const doc=`<!DOCTYPE html><html><head><style>${c}</style></head><body>${h}<script>${j}<\/script></body></html>`;
+  document.getElementById("out").srcdoc=doc;
+}
+run();
+</script>
+</body>
+</html>
